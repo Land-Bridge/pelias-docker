@@ -1,0 +1,198 @@
+{
+  "name": "/v1/search venues",
+  "priorityThresh": 1,
+  "endpoint": "search",
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "notes": "Seattle city should come up for SEA",
+      "in": {
+        "text": "sea"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "locality",
+            "name": "Seattle",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Washington",
+            "region_a": "WA",
+            "locality": "Seattle"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "pass",
+      "notes": "Space Needle should be findable",
+      "in": {
+        "text": "space needle"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Space Needle",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Washington",
+            "region_a": "WA",
+            "locality": "Seattle"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "pass",
+      "notes": "Pike Place Market should be findable",
+      "in": {
+        "text": "pike place market"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "neighbourhood",
+            "name": "Pike Place Market",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Washington",
+            "region_a": "WA",
+            "locality": "Seattle"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "status": "pass",
+      "notes": "University of Washington should be findable",
+      "in": {
+        "text": "university of washington"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "University of Washington",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Washington",
+            "region_a": "WA",
+            "locality": "Seattle"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "status": "pass",
+      "notes": "Safeco Plaza should be findable when searching for Safeco Field",
+      "in": {
+        "text": "safeco field"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Safeco Plaza",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Washington",
+            "region_a": "WA",
+            "locality": "Seattle"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "status": "pass",
+      "notes": "CenturyLink should be findable when searching for CenturyLink Field",
+      "in": {
+        "text": "centurylink field"
+      },
+      "expected": {
+        "priorityThresh": 2,
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "CenturyLink",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Washington",
+            "region_a": "WA",
+            "locality": "Seattle"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "status": "pass",
+      "notes": "Seattle Center should be findable",
+      "in": {
+        "text": "seattle center"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Seattle Center",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Washington",
+            "region_a": "WA",
+            "locality": "Seattle"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "status": "pass",
+      "notes": "Boeing Field should be findable",
+      "in": {
+        "text": "boeing field"
+      },
+      "expected": {
+        "priorityThresh": 2,
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Boeing Field",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Washington",
+            "region_a": "WA",
+            "locality": "Seattle"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "status": "pass",
+      "notes": "Gas Works Park should be findable",
+      "in": {
+        "text": "gas works park"
+      },
+      "expected": {
+        "properties": [
+          {
+            "layer": "venue",
+            "name": "Gas Works Park",
+            "country_a": "USA",
+            "country": "United States",
+            "region": "Washington",
+            "region_a": "WA",
+            "locality": "Seattle"
+          }
+        ]
+      }
+    }
+  ]
+}

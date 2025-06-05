@@ -1,0 +1,108 @@
+{
+    "name": "Seattle Autocomplete Tests",
+    "priorityThresh": 1,
+    "endpoint": "autocomplete",
+    "tests": [
+        {
+            "id": "1",
+            "status": "pass",
+            "description": "Basic Seattle city search with focus point",
+            "in": {
+                "text": "seattle",
+                "focus.point.lat": 47.6062,
+                "focus.point.lon": -122.3321
+            },
+            "expected": {
+                "properties": [
+                    {
+                        "name": "Seattle",
+                        "region": "Washington",
+                        "layer": "locality"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "2",
+            "status": "pass",
+            "description": "Search for a major Seattle landmark",
+            "in": {
+                "text": "space needle",
+                "focus.point.lat": 47.6062,
+                "focus.point.lon": -122.3321
+            },
+            "expected": {
+                "properties": [
+                    {
+                        "name": "Space Needle",
+                        "layer": "venue",
+                        "locality": "Seattle",
+                        "region": "Washington"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "3",
+            "status": "pass",
+            "description": "Search for a Seattle neighborhood",
+            "in": {
+                "text": "capitol hill",
+                "focus.point.lat": 47.6062,
+                "focus.point.lon": -122.3321
+            },
+            "expected": {
+                "properties": [
+                    {
+                        "name": "Capitol Hill",
+                        "layer": "neighbourhood",
+                        "locality": "Seattle",
+                        "region": "Washington"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "4",
+            "status": "pass",
+            "description": "Search for a Seattle address",
+            "in": {
+                "text": "400 broad",
+                "focus.point.lat": 47.6062,
+                "focus.point.lon": -122.3321
+            },
+            "expected": {
+                "properties": [
+                    {
+                        "housenumber": "400",
+                        "street": "Broad Street",
+                        "locality": "Seattle",
+                        "region": "Washington",
+                        "layer": "address"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "5",
+            "status": "pass",
+            "description": "Search for a Seattle park",
+            "in": {
+                "text": "gas works",
+                "focus.point.lat": 47.6062,
+                "focus.point.lon": -122.3321
+            },
+            "expected": {
+                "priorityThresh": 4,
+                "properties": [
+                    {
+                        "name": "Gas Works Park",
+                        "layer": "venue",
+                        "locality": "Seattle",
+                        "region": "Washington"
+                    }
+                ]
+            }
+        }
+    ]
+}

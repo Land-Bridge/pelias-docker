@@ -1,0 +1,271 @@
+{
+  "name": "/v1/search address",
+  "description": "addresses in Seattle, WA",
+  "priorityThresh": 1,
+  "normalizers": {
+    "name": [
+      "toUpperCase",
+      "removeOrdinals",
+      "stripPunctuation",
+      "abbreviateDirectionals",
+      "abbreviateStreetSuffixes"
+    ]
+  },
+  "tests": [
+    {
+      "id": 1,
+      "status": "pass",
+      "in": {
+        "text": "400 Broad St, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "400 Broad Street",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "status": "pass",
+      "in": {
+        "text": "400 Broad St, Seattle, Washington"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "400 Broad Street",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "status": "pass",
+      "in": {
+        "text": "1301 5th Ave, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1301 5th Avenue",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "status": "pass",
+      "in": {
+        "text": "1301 5th Avenue, Seattle, Washington"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1301 5th Avenue",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "status": "pass",
+      "in": {
+        "text": "1000 4th Ave, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1000 4th Avenue",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "status": "pass",
+      "in": {
+        "text": "2700 1st Ave S, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2700 1st Avenue South",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "status": "pass",
+      "in": {
+        "text": "1918 8th Ave, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1918 8th Avenue",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "status": "pass",
+      "in": {
+        "text": "1501 Pike Pl, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1501 Pike Place",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "status": "pass",
+      "in": {
+        "text": "1501 Pike Place, Seattle, Washington"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1501 Pike Place",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "status": "pass",
+      "in": {
+        "text": "86 Pine St, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "86 Pine Street",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "status": "pass",
+      "in": {
+        "text": "1200 Westlake Ave N, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "1200 Westlake Avenue North",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "status": "pass",
+      "in": {
+        "text": "3665A Interlake Ave N, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "3665 Interlake Avenue North",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "status": "pass",
+      "in": {
+        "text": "3665 Interlake Avenue North, Seattle, Washington"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "3665 Interlake Avenue North",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "status": "pass",
+      "in": {
+        "text": "601 Union St, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "601 Union Street",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "status": "pass",
+      "in": {
+        "text": "2000 Alaskan Way, Seattle, WA"
+      },
+      "expected": {
+        "properties": [
+          {
+            "name": "2000 Alaskan Way",
+            "locality": "Seattle",
+            "region": "Washington",
+            "region_a": "WA"
+          }
+        ]
+      }
+    }
+  ]
+}
