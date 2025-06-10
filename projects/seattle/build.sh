@@ -2,7 +2,7 @@
 set -x
 
 # remove network if it exists
-# docker network rm pelias_seattle_default
+docker network rm pelias_seattle_default
 
 # go to the project directory
 cd $(dirname $0)
@@ -27,10 +27,11 @@ fi
 pelias compose pull
 pelias elastic start
 pelias elastic wait
+pelias elastic drop
 pelias elastic create
 pelias download all
 pelias prepare all
-pelias import all
+pelias import osm
 pelias compose up
 
 # # optionally run tests
