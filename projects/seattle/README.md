@@ -24,8 +24,11 @@ To run a complete build, execute the following commands in this directory:
 You can now make queries against your new Pelias build:
 
 http://localhost:4000/v1/search?text=seattle
+
 http://localhost:4000/v1/search?text=3665%20Interlaken%20Ave%20N%20Seattle%20WA%2098103
+
 http://localhost:4000/v1/search?text=fremont
+
 http://localhost:4000/v1/autocomplete?focus.point.lat=47.6062&focus.point.lon=-122.3321&text=3665%20interlake
 
 # Run Tests
