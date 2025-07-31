@@ -26,6 +26,9 @@
     }
   },
   "api": {
+    "targets": {
+      "csv": ["address"]
+    },
     "services": {
       "placeholder": {
         "url": "http://placeholder:4100"
@@ -52,18 +55,20 @@
     "csv": {
       "datapath": "/data/csv",
       "files": [],
-      "download": [
-        "https://raw.githubusercontent.com/pelias/csv-importer/master/data/example.csv"
-      ]
+      "download": ["parcels.csv"]
     },
     "geonames": {
       "datapath": "/data/geonames",
-      "countryCode": "US"
+      "countryCode": "US",
+      "importPlace": [
+        102087539 
+      ]
     },
     "openstreetmap": {
       "download": [
         {
-          "sourceURL": "https://download.geofabrik.de/north-america/us/washington-latest.osm.pbf"
+          "sourceURL": "https://download.geofabrik.de/north-america/us/washington-latest.osm.pbf",
+          "filename": "washington-latest.osm.pbf"
         }
       ],
       "leveldbpath": "/tmp",
@@ -74,18 +79,12 @@
         }
       ]
     },
-    "polyline": {
-      "datapath": "/data/polylines",
-      "files": [
-        "extract.0sv"
-      ]
-    },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
       "importPostalcodes": true,
       "countryCode": "US",
       "importPlace": [
-        "85688623"
+        "102087539"
       ]
     }
   },

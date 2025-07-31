@@ -1,38 +1,24 @@
 #!/bin/bash
-set -x
+set -x # Enable command tracing for debugging
 
-# remove network if it exists
-docker network rm pelias_seattle_default
-
-# go to the project directory
-cd $(dirname $0)
-
-# install pelias script
-# make sure that /usr/local/bin is in your $PATH
-sudo ln -s "$(pwd)/pelias" /usr/local/bin/pelias
-
-# create data directory
 mkdir -p ./data
+echo "COMPOSE_PROJECT_NAME=pelias_seattle" > .env
+# IMPORTANT: Set DATA_DIR to the persistent './data' directory
+echo "DATA_DIR=$(pwd)/data/" >> .env # Use absolute path for clarity and robustness
+echo "Created default .env file"
 
-# create .env file
-# Create default .env if it doesn't exist
-if [ ! -f .env ]; then
-    echo "COMPOSE_PROJECT_NAME=pelias_seattle" > .env
-    echo "DATA_DIR=/tmp/pelias/" >> .env
-    echo "Created default .env file"
-fi
-
-
-# run build
 pelias compose pull
 pelias elastic start
 pelias elastic wait
-pelias elastic drop
 pelias elastic create
-pelias download all
-pelias prepare all
+pelias download osm
+pelias download wof
+pelias download csv
 pelias import osm
+pelias import wof
+pelias import csv
 pelias compose up
 
-# # optionally run tests
+# --- Optional: Run Tests ---
+# Uncomment the line below if you want to run Pelias acceptance tests after building.
 # pelias test run
