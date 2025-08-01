@@ -1,0 +1,17 @@
+# Handle Cloudflare Tunnel requests
+http://pelias-api.alotta.land:4000 {
+    log {
+        output stdout
+        format json
+    }
+    reverse_proxy http://pelias_api:4000
+}
+
+# Handle local requests (e.g., curl http://127.0.0.1:4000)
+http://127.0.0.1:4000 {
+    log {
+        output stdout
+        format json
+    }
+    reverse_proxy http://pelias_api:4000
+}

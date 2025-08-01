@@ -31,6 +31,13 @@ http://localhost:4000/v1/search?text=fremont
 
 http://localhost:4000/v1/autocomplete?focus.point.lat=47.6062&focus.point.lon=-122.3321&text=3665%20interlake
 
+
+# Cloudflare Tunneling
+To ensure that this service is accessible for development, we exposed the endpoint at pelias-api.alotta.land. 
+
+This is managed via cloudflare zero trust dashboard.
+
+
 # Run Tests
 
 ```bash

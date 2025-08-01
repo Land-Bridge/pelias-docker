@@ -1,12 +1,6 @@
 #!/bin/bash
 set -x # Enable command tracing for debugging
 
-mkdir -p ./data
-echo "COMPOSE_PROJECT_NAME=pelias_seattle" > .env
-# IMPORTANT: Set DATA_DIR to the persistent './data' directory
-echo "DATA_DIR=$(pwd)/data/" >> .env # Use absolute path for clarity and robustness
-echo "Created default .env file"
-
 pelias compose pull
 pelias elastic start
 pelias elastic wait
