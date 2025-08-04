@@ -1,3 +1,4 @@
 projects/*/data
 .DS_Store
 projects/*/.env
+projects/*/caddy_data/
